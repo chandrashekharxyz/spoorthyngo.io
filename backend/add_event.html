@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>SPOORTHY</title>
+	<!-- Favicon-->
+    <link rel="icon" type="image" href="images/PNG.png" sizes="192x192" />
+    <!-- <link rel="icon" type="image" href="./images/website-favicon.png" sizes="192x192" /> -->
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- custom add-ons for nav bar and footer -->
+    <link rel="stylesheet" type="text/css" href="css/add.css ">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+</head>
+
+<body>
+<!------navigation------->
+<div class="container-fluid menu">
+        <nav class="navbar navbar-expand-lg my-navbar">
+            <a class="navbar-brand " href="index.html"><img src="images/PNG.png" height="100" width='150' alt="" loading="lazy"></a>
+            <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="aboutus.html">About us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="events.html" class="nav-link">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="gallery.html" class="nav-link">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="donateform.html" class="nav-link">Donate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="vol.html" class="nav-link">Volunteer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contactus.html" class="nav-link">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+</div>
+
+
+<style>
+    p {
+      text-align: center;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #009970;
+    }
+  </style>
+  
+  <section class="section-bg services">
+      <div class="form-section">
+          <div class="section-title">
+              <h2>Event details</h2>
+          </div>
+          {% with messages = get_flashed_messages() %}
+          {% if messages %}
+              {% for message in messages %}
+                  <p>{{ message }}</p>
+              {% endfor %}
+          {% endif %}
+          {% endwith %}
+          <form action="{{ url_for('add_event') }}" method="post" enctype="multipart/form-data">
+              <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" id="title" name="title">
+              </div>
+              <div class="form-group">
+                <label for="subtitle">Subtitle</label>
+                <input type="text" class="form-control" id="subtitle" name="subtitle">
+              </div>
+              <div class="form-group">
+                <label for="description">Description</label>
+                <textarea rows="3" class="form-control" id="description" name="description"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="image">Image</label>
+                <input type="file" class="form-control" id="image" name="image" accept="image/x-png,image/gif,image/jpeg,image/jpg,image/png">
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+      </div>
+  </section>
+
+
+
+
+
+
+
+
+{% include "footer.html" %}

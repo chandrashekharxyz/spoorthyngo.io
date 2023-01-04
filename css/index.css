@@ -39,7 +39,7 @@ a:hover {
 #header {
   height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url('/images/main.jpeg');
+    url('../images/main.jpeg');
   background-position: center;
   background-size: cover;
 }
@@ -304,8 +304,13 @@ a:hover {
   }
 
   .header-box {
+    margin-top: 5rem;
     width: 80%;
   }
+
+  /* #header {
+    height: 5rem;
+  } */
 
   .portfolio-details .portfolio-info {
     position: static;

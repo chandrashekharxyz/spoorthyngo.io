@@ -68,23 +68,37 @@
         <h2 class="mb-5">EVENTS<hr class="green-hr"></h2>
     </div>
     <hr>
-    <!--project ahaar-->
-    {% for event in all_events: %}
+    <!--##################### EVENTS ####################-->
+    <!-- Event 1 -->
         <div class="row justify-content-start">
         <div class="col-md-5" data-aos="fade-up"
         data-aos-anchor-placement="center-bottom">
-            <img src="{{ url_for('event_image', id=event.id) }}" class="img-fluid" alt="project-ahaar">
+            <img src="{{ url_for('event_image', id=event.id) }}" class="img-fluid" alt="EVENT IMAGE">
         </div>
         <div class="col-md-7 pt-4" data-aos="fade-left">
-            <h2>{{ event.title }}</h2>
-            <h4><b><a href="#">{{ event.subtitle }}</a></b></h4>
+            <h2>EVENT TITLE</h2>
+            <h4><b><a href="#">EVENT SUBTITLE</a></b></h4>
             <p class="font-italic">
-            {{ event.description }}
+            EVENT DESCRIPTION
             </p>
         </div>
         </div>
         <hr>
-    {% endfor %}
+    <!-- Event 2 -->
+        <div class="row justify-content-start">
+          <div class="col-md-5" data-aos="fade-up"
+          data-aos-anchor-placement="center-bottom">
+              <img src="{{ url_for('event_image', id=event.id) }}" class="img-fluid" alt="EVENT IMAGE">
+          </div>
+          <div class="col-md-7 pt-4" data-aos="fade-left">
+              <h2>EVENT TITLE</h2>
+              <h4><b><a href="#">EVENT SUBTITLE</a></b></h4>
+              <p class="font-italic">
+              EVENT DESCRIPTION
+              </p>
+          </div>
+          </div>
+          <hr>
     <!--covid-19 awareness-->
   </section>
   <!--main_body_end-->

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <title>SPOORTHY</title>
 	<!-- Favicon-->
-    <link rel="icon" type="image" href="images/PNG.png" sizes="192x192" />
+    <link rel="icon" type="image" href="images/PNG.jpg" sizes="192x192" />
     <!-- <link rel="icon" type="image" href="./images/website-favicon.png" sizes="192x192" /> -->
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -26,7 +26,7 @@
 <!------navigation------->
 <div class="container-fluid menu">
         <nav class="navbar navbar-expand-lg my-navbar">
-            <a class="navbar-brand " href="index.html"><img src="images/PNG.png" height="100" width='150' alt="" loading="lazy"></a>
+            <a class="navbar-brand " href="index.html"><img src="images/PNG.jpg" height="100" width='150' alt="" loading="lazy"></a>
             <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse"
                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -68,23 +68,37 @@
         <h2 class="mb-5">EVENTS<hr class="green-hr"></h2>
     </div>
     <hr>
-    <!--project ahaar-->
-    {% for event in all_events: %}
+    <!--##################### EVENTS ####################-->
+    <!-- Event 1 -->
         <div class="row justify-content-start">
         <div class="col-md-5" data-aos="fade-up"
         data-aos-anchor-placement="center-bottom">
-            <img src="{{ url_for('event_image', id=event.id) }}" class="img-fluid" alt="project-ahaar">
+            <img src="{{ url_for('event_image', id=event.id) }}" class="img-fluid" alt="EVENT IMAGE">
         </div>
         <div class="col-md-7 pt-4" data-aos="fade-left">
-            <h2>{{ event.title }}</h2>
-            <h4><b><a href="#">{{ event.subtitle }}</a></b></h4>
+            <h2>EVENT TITLE</h2>
+            <h4><b><a href="#">EVENT SUBTITLE</a></b></h4>
             <p class="font-italic">
-            {{ event.description }}
+            EVENT DESCRIPTION
             </p>
         </div>
         </div>
         <hr>
-    {% endfor %}
+    <!-- Event 2 -->
+        <div class="row justify-content-start">
+          <div class="col-md-5" data-aos="fade-up"
+          data-aos-anchor-placement="center-bottom">
+              <img src="{{ url_for('event_image', id=event.id) }}" class="img-fluid" alt="EVENT IMAGE">
+          </div>
+          <div class="col-md-7 pt-4" data-aos="fade-left">
+              <h2>EVENT TITLE</h2>
+              <h4><b><a href="#">EVENT SUBTITLE</a></b></h4>
+              <p class="font-italic">
+              EVENT DESCRIPTION
+              </p>
+          </div>
+          </div>
+          <hr>
     <!--covid-19 awareness-->
   </section>
   <!--main_body_end-->
@@ -99,7 +113,7 @@
           <div class="row">
 
               <div class="col-lg-4 col-md-6 footer-contact" style="height:200px">
-                   <img style="width: auto;height: 200px;" src="images/PNG.png">
+                   <img style="width: auto;height: 200px;" src="images/PNG.jpg">
             </div>
                    <div class="col-lg-4 col-md-6 footer-contact" style="height: 200px">
                   <h3 style="color: #009970"><b>Spoorthy Organization</b></h3>

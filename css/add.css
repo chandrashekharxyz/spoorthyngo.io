@@ -197,6 +197,9 @@ footer a {
   .footer-contact{
     text-align: center;
   }
+  .footer-contact:nth-child(1) {
+    margin-bottom: 2rem;
+  }
 }
 
 .copyright {

@@ -353,6 +353,7 @@ a:hover {
   background:#fff;
   padding: 10px;
   box-shadow: 5px 10px 10px #444444 ;
+  height: 380px !important;
 }
 .testimonial img {
   width: 100px;

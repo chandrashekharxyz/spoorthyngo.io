@@ -55,6 +55,9 @@ a:hover {
   font-weight: bold;
   margin: 10px;
 }
+.header-box span {
+  font-size: 60px;
+}
 /*header Image End*/
 
 /*jumbotron Section Starts*/
@@ -151,6 +154,10 @@ a:hover {
 /*Portfolio Section Starts || Same CSS use for Education @TRPWS*/
 .portfolio .portfolio-item {
   margin-bottom: 30px;
+}
+.portfolio{
+  padding: 0;
+  padding-top: 5px;
 }
 .portfolio #portfolio-flters {
   padding: 0;
@@ -305,7 +312,7 @@ a:hover {
 
   .header-box {
     margin-top: 5rem;
-    width: 80%;
+    text-align: left;
   }
 
   /* #header {
@@ -353,7 +360,7 @@ a:hover {
   background:#fff;
   padding: 10px;
   box-shadow: 5px 10px 10px #444444 ;
-  height: 380px !important;
+  height: 400px !important;
 }
 .testimonial img {
   width: 100px;

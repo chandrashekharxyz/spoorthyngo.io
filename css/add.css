@@ -196,6 +196,12 @@ footer a {
 @media screen and (max-width: 768px) {
   .footer-contact{
     text-align: center;
+    margin: 0;
+  }
+  .social-links ,
+  .footer-contact{
+    padding-top: 0;
+    padding-bottom: 0;
   }
   .footer-contact:nth-child(1) {
     margin-bottom: 2rem;
@@ -204,6 +210,10 @@ footer a {
   .footer-logo{
     padding-top: 0;
     padding-bottom: 0;
+  }
+
+  #footer {
+    padding-top: 0;
   }
 }
 

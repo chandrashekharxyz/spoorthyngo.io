@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>SPOORTHY</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image" href="images/PNG.png" sizes="192x192" />
+    <!-- <link rel="icon" type="image" href="./images/website-favicon.png" sizes="192x192" /> -->
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- custom add-ons for nav bar and footer -->
+    <link rel="stylesheet" type="text/css" href="css/add.css ">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+    <script src="js/auth.js" type="module"></script>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+
+    <div class="container-fluid menu">
+        <nav class="navbar navbar-expand-lg my-navbar">
+            <a class="navbar-brand " href="index.html"><img src="images/PNG.png" height="100" width='150' alt=""
+                    loading="lazy"></a>
+            <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="aboutus.html">About us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="events.html" class="nav-link">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="gallery.html" class="nav-link">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="donateform.html" class="nav-link">Donate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="vol.html" class="nav-link">Volunteer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contactus.html" class="nav-link">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <main>
+        <div>
+            <form id="admin-login-form">
+                <div class="admin-form-input">
+                    <label>Email</label>
+                    <input type="email" id="admin-login-email" placeholder="Enter your email" />
+                </div>
+                <div class="admin-form-input">
+                    <label>Password</label>
+                    <input type="password" id="admin-login-password" placeholder="Enter your password" />
+                </div>
+                <div id="login-error-message"></div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>

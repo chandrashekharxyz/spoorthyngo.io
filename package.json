@@ -1,0 +1,22 @@
+{
+  "name": "spoorthi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "js/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mohd-Muneeb/spoorthyngo.io.git"
+  },
+  "author": "Mohd Muneeb, Chandrashekar, Siddharth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mohd-Muneeb/spoorthyngo.io/issues"
+  },
+  "homepage": "https://github.com/Mohd-Muneeb/spoorthyngo.io#readme",
+  "dependencies": {
+    "firebase": "^9.15.0"
+  }
+}

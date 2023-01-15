@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>SPOORTHY</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image" href="images/PNG.png" sizes="192x192" />
+    <!-- <link rel="icon" type="image" href="./images/website-favicon.png" sizes="192x192" /> -->
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- custom add-ons for nav bar and footer -->
+    <link rel="stylesheet" type="text/css" href="css/add.css ">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+    <script src="js/auth.js"></script>
+</head>
+
+<body>
+    <!-- Navbar Here  -->
+
+    Navbar
+
+    <!-- Upload menu  -->
+    <main class="admin-upload">
+        <div>
+            <h3>Upload Gallery Image!</h3>
+            <div class="upload-gallery">
+                Add new image
+                <form action="{{ url_for('add_gallery_image') }}" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="image">Image</label>
+                        <input type="file" class="form-control" id="image" name="image"
+                            accept="image/x-png,image/gif,image/jpeg,image/jpg,image/png">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div>
+            <h3>Upload Event!</h3>
+            <form action="{{ url_for('add_event') }}" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" class="form-control" id="title" name="title">
+                </div>
+                <div class="form-group">
+                    <label for="subtitle">Subtitle</label>
+                    <input type="text" class="form-control" id="subtitle" name="subtitle">
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea rows="3" class="form-control" id="description" name="description"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="image">Image</label>
+                    <input type="file" class="form-control" id="image" name="image"
+                        accept="image/x-png,image/gif,image/jpeg,image/jpg,image/png">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </main>
+    <div id="admin-editing">
+        Edit Updating Images or events! 
+    </div>
+</body>
+
+</html>

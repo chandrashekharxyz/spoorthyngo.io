@@ -21,16 +21,15 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 
 // Create a root reference
-function uploadImage() {
-	// const ref = firebase.storage().ref();
-	const file = document.querySelector("#photo").files[0];
+function uploadImage(file) {
+	// const file = document.querySelector("#photo").files[0];
 
 	// Create a root reference
 	const storage = getStorage(app);
 
 	// Create a reference to 'mountains.jpg'
-	const mountainsRef = ref(storage, "mountains.jpg");
-	uploadBytes(mountainsRef, file)
+	const imageRef = ref(storage, "mountains.jpg");
+	uploadBytes(imageRef, file)
 		.then((snapshot) => {
 			alert("Uploaded a blob or file!");
 		})
@@ -38,7 +37,7 @@ function uploadImage() {
 }
 
 document.getElementById("uploadImage").addEventListener("click", (e) => {
-	uploadImage();
+	uploadImage(document.querySelector("#photo").files[0]);
 });
 
 const errorMsgElement = document.querySelector("span#errorMsg");
@@ -47,15 +46,22 @@ function createEvent() {
 	const title = document.getElementById("event-title");
 	const subtitle = document.getElementById("event-subtitle");
 	const description = document.getElementById("event-description");
-	const image = document.getElementById("event-image");
+	const image = document.getElementById("event-image").files[0];
+
+	try {
+		uploadImage(image);
+	} catch (err) {
+		alert("Error Occured, please try later or contact Weblaunch")
+		console.log(err)
+	}
+
+
 }
 
-// document.getElementById("create-event").addEventListener("click", (e) =>
-// 	createEvent(e)
-// );
+document.getElementById("upload-event").addEventListener("click", (e) => createEvent(e))
 
-function updateEvent() {}
+function updateEvent() { }
 
-function deleteEvent() {}
+function deleteEvent() { }
 
-function getEvents() {}
+function getEvents() { }

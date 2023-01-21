@@ -4,6 +4,7 @@ import {
 	uploadBytes,
 } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-storage.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
 
 const firebaseConfig = {
 	apiKey: "AIzaSyAHR67C4H_51mUc1QdAztY1uLBzRlh4Pcs",
@@ -19,7 +20,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
-
+const db = getFirestore(app);
 // Create a root reference
 function uploadImage(file) {
 	// const file = document.querySelector("#photo").files[0];
@@ -32,8 +33,12 @@ function uploadImage(file) {
 	uploadBytes(imageRef, file)
 		.then((snapshot) => {
 			alert("Uploaded a blob or file!");
+			console.log(snapshot)
+			return snapshot.name;
 		})
 		.catch((err) => console.log(err));
+
+	// Add a new document with a generated id.
 }
 
 document.getElementById("uploadImage").addEventListener("click", (e) => {
@@ -42,20 +47,36 @@ document.getElementById("uploadImage").addEventListener("click", (e) => {
 
 const errorMsgElement = document.querySelector("span#errorMsg");
 
-function createEvent() {
-	const title = document.getElementById("event-title");
-	const subtitle = document.getElementById("event-subtitle");
-	const description = document.getElementById("event-description");
-	const image = document.getElementById("event-image").files[0];
+let title = "";
+let subtitle = "";
+let description = "";
+let titleItem = document.getElementById("event-title");
+let subtitleItem = document.getElementById("event-subtitle");
+let descriptionItem = document.getElementById("event-description");
+let image = document.getElementById("event-image").files[0];
 
-	try {
-		uploadImage(image);
-	} catch (err) {
-		alert("Error Occured, please try later or contact Weblaunch")
-		console.log(err)
-	}
+titleItem.addEventListener("keypress", (e) => { title = e.target.value })
+subtitleItem.addEventListener("keypress", (e) => { subtitle = e.target.value })
+descriptionItem.addEventListener("keypress", (e) => { description = e.target.value })
+async function createEvent() {
+	// Create a root reference
+	const storage = getStorage(app);
 
-
+	// Create a reference to 'mountains.jpg'
+	const imageRef = ref(storage, "mountains.jpg");
+	uploadBytes(imageRef, image)
+		.then(async (snapshot) => {
+			alert("Uploaded a blob or file!");
+			console.log(snapshot)
+			const docRef = await addDoc(collection(db, "events"), {
+				title: title,
+				subtitle: subtitle,
+				description: description,
+				image: snapshot.ref.fullPath
+			})
+				.catch((err) => console.log(err));
+			console.log("Document written with ID: ", docRef.id);
+		});
 }
 
 document.getElementById("upload-event").addEventListener("click", (e) => createEvent(e))

@@ -19,7 +19,7 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+export const app = initializeApp(firebaseConfig);
 
 const auth = getAuth(app);
 
@@ -36,7 +36,7 @@ document.getElementById("admin-login-password").addEventListener(
 	}
 );
 
-function something(e) {
+function InitiateLogin(e) {
 	e.preventDefault();
 	signInWithEmailAndPassword(auth, email, password)
 		.then((userCredential) => {
@@ -57,7 +57,7 @@ function something(e) {
 }
 
 document.getElementById("admin-login-form").addEventListener("submit", (e) =>
-	something(e)
+	InitiateLogin(e)
 );
 
 onAuthStateChanged(auth, (user) => {
@@ -73,14 +73,14 @@ onAuthStateChanged(auth, (user) => {
 	}
 });
 
-document.getElementById("admin-sign-out").addEventListener("click", (e) => {
-	signOut(auth)
-		.then(() => {
-			// Sign-out successful.
-			window.location.href = "/admin.html";
-		})
-		.catch((error) => {
-			// An error happened.
-			alert("Some error occured, please refresh");
-		});
-});
+// document.getElementById("admin-sign-out").addEventListener("click", (e) => {
+// 	signOut(auth)
+// 		.then(() => {
+// 			// Sign-out successful.
+// 			window.location.href = "/admin.html";
+// 		})
+// 		.catch((error) => {
+// 			// An error happened.
+// 			alert("Some error occured, please refresh");
+// 		});
+// });
